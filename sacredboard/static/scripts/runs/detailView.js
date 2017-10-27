@@ -28,14 +28,17 @@ define(
                 <div class="col-md-2">
                       <ul class="nav nav-pills nav-stacked">
                         <li role="presentation" class="active">
-                            <a href="#experiment-config-` + escapeHtml(run.id) + `" data-toggle="pill">Config</a>
+                            <a href="#experiment-config-` + escapeHtml(run.id) + `" data-toggle="pill">Configuration</a>
                         </li>
                         <li role="presentation">
                             <a href="#experiment-info-` + escapeHtml(run.id) + `" data-toggle="pill">Run info</a>
                         </li>
                         <li role="presentation">
                             <a href="#captured-output-` + escapeHtml(run.id) + `" data-toggle="pill">Captured output</a>
-                        </li>                        
+                        </li>
+                        <li role="presentation">
+                            <a href="#results-` + escapeHtml(run.id) + `" data-toggle="pill">Results</a>
+                        </li>
                         <li role="presentation">
                             <a href="#experiment-experiment-` + escapeHtml(run.id) + `" data-toggle="pill">Experiment</a>
                         </li>
@@ -63,6 +66,12 @@ define(
                             <dictionary-browser params="value: run.object.info"></dictionary-browser>
                         </div>
                   </div>
+                  <div id="results-` + escapeHtml(run.id) + `" class="tab-pane table-responsive">
+                      <h4>Results</h4>
+                      <div class="detail-page-box">
+                            <dictionary-browser params="value: run.object.results"></dictionary-browser>
+                      </div>
+                  </div>
                   <div id="experiment-experiment-` + escapeHtml(run.id) + `" class="tab-pane table-responsive">
                       <h4>Experiment</h4>
                       <div class="detail-page-box">
@@ -76,7 +85,7 @@ define(
                         </div>
                   </div>
                       <div id="captured-output-` + escapeHtml(run.id) + `" class="tab-pane">
-                      <h4>Captured output from the experiment</h4>
+                      <h4>Captured output</h4>
                         <pre class="scrollDown detail-page-box" sacred-content="captured_out">`
                 + escapeHtml(run.object.captured_out) + `</pre>
                       </div>

@@ -26,10 +26,13 @@ class MongoDbCursor(Cursor):
 class PyMongoDataAccess(DataStorage):
     """Access records in MongoDB."""
 
-    RUNNING_DEAD_RUN_CLAUSE = {
-        "status": "RUNNING", "$where": "new Date() - this.heartbeat > 120000"}
-    RUNNING_NOT_DEAD_CLAUSE = {
-        "status": "RUNNING", "$where": "new Date() - this.heartbeat <= 120000"}
+    # TODO this crashes for unknown reason
+    RUNNING_DEAD_RUN_CLAUSE = {}
+    # {
+    #     "status": "RUNNING", "$where": "new Date() - this.heartbeat > 120000"}
+    RUNNING_NOT_DEAD_CLAUSE = {}
+    # {
+    #     "status": "RUNNING", "$where": "new Date() - this.heartbeat <= 120000"}
 
     def __init__(self, uri, database_name, collection_name):
         """
@@ -54,7 +57,7 @@ class PyMongoDataAccess(DataStorage):
 
     def _create_client(self):
         """Return a new Mongo Client."""
-        return pymongo.MongoClient(host=self._uri)
+        return pymongo.MongoClient(self._uri)
 
     def get_runs(self, sort_by=None, sort_direction=None,
                  start=0, limit=None, query={"type": "and", "filters": []}):
