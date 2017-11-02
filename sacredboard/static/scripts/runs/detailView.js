@@ -37,6 +37,9 @@ define(
                             <a href="#captured-output-` + escapeHtml(run.id) + `" data-toggle="pill">Captured output</a>
                         </li>
                         <li role="presentation">
+                            <a href="#fail-trace-` + escapeHtml(run.id) + `" data-toggle="pill">Fail trace</a>
+                        </li>
+                        <li role="presentation">
                             <a href="#results-` + escapeHtml(run.id) + `" data-toggle="pill">Results</a>
                         </li>
                         <li role="presentation">
@@ -88,6 +91,11 @@ define(
                       <h4>Captured output</h4>
                         <pre class="scrollDown detail-page-box" sacred-content="captured_out">`
                 + escapeHtml(run.object.captured_out) + `</pre>
+                      </div>
+                      <div id="fail-trace-` + escapeHtml(run.id) + `" class="tab-pane">
+                      <h4>Fail trace</h4>
+                        <pre class="scrollDown detail-page-box" sacred-content="fail_trace">`
+                + escapeHtml(run.object.fail_trace) + `</pre>
                       </div>
                       <div id="tensorflow-` + escapeHtml(run.id) + `"  class="tab-pane">
                         <h4>Tensorflow logs</h4>
