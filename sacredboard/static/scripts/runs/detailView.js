@@ -72,7 +72,7 @@ define(
                   <div id="results-` + escapeHtml(run.id) + `" class="tab-pane table-responsive">
                       <h4>Results</h4>
                       <div class="detail-page-box">
-                            <dictionary-browser params="value: run.object.results"></dictionary-browser>
+                            <dictionary-browser params="value: run.object.result"></dictionary-browser>
                       </div>
                   </div>
                   <div id="experiment-experiment-` + escapeHtml(run.id) + `" class="tab-pane table-responsive">

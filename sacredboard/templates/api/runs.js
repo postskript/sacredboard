@@ -16,7 +16,7 @@
         "heartbeat_diff": {{run.heartbeat | default | timediff | tojson}},
         "hostname": {{run.host.hostname | default | tojson}},
         {# commented out: "captured_out_last_line": {{run.captured_out | default | last_line | tojson}}, #}
-        "result":{{run.result["test_acc"] | default | dump_json }}
+        "result": {{run.result["optimization_target"] | default | tojson }}
         {%- if full_object -%},
         "object": {{run | dump_json}}
         {% endif %}

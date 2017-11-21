@@ -39,7 +39,7 @@ def get_runs():
             request.args.get("columns[%d][name]" % int(order_column))
         if order_column == "hostname":
             order_column = "host.hostname"
-
+    order_column = None
     runs = data.get_runs(
         start=start, limit=length,
         sort_by=order_column, sort_direction=order_dir, query=query)
