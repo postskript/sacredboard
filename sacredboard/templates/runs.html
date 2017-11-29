@@ -85,6 +85,9 @@
                 <span class="run-queued">&block;</span> <input type="checkbox"
                                                                data-bind="checkedValue: predefinedFilters['run-queued'], checked: statusFilters.filters">
                 Queued
+                <span class="run-delete">&block;</span> <input type="checkbox"
+                                                               data-bind="checkedValue: predefinedFilters['run-delete'], checked: statusFilters.filters">
+                Delete
                     &nbsp;&nbsp; <button data-bind="click: reloadTable">Refresh</button>
             </caption>
             <thead>
