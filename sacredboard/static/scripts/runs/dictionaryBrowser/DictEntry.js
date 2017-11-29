@@ -138,6 +138,8 @@ define(["knockout"], function (ko) {
             return "null";
         } else if (typeof value === "object") {
             return "{...}";
+        } else if (typeof value === "number" && value < 1.0) {
+            return "" + value.toExponential();
         } else {
             return "" + value;
         }
