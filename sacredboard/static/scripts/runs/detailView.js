@@ -89,7 +89,7 @@ define(
                   </div>
                       <div id="captured-output-` + escapeHtml(run.id) + `" class="tab-pane">
                       <h4>Captured output</h4>
-                        <pre class="scrollDown detail-page-box" sacred-content="captured_out">`
+                        <pre class="detail-page-box" sacred-content="captured_out">`
                 + escapeHtml(run.object.captured_out) + `</pre>
                       </div>
                       <div id="fail-trace-` + escapeHtml(run.id) + `" class="tab-pane">
