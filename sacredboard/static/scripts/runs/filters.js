@@ -14,7 +14,8 @@ define(["knockout", "jquery", "text!runs/filters.html", "runs/filters/queryFilte
         var filters = {
             "QueryFilter": QueryFilter,
             "QueryFilters": QueryFilters,
-            /** Register <query-filter> HTML tag to display the filter form.
+            /**
+             Register <query-filter> HTML tag to display the filter form.
 
              Displays an inline form to add a new filter to the QueryFilters provided
              as the 'value' parameter. The applied filters are shown in a row
@@ -24,7 +25,7 @@ define(["knockout", "jquery", "text!runs/filters.html", "runs/filters/queryFilte
              Example:
              <query-filter params="value: queryFilters"></query-filter>
 
-             @method
+             @function
              */
             "initialize": function () {
                 ko.components.register("query-filter", {
